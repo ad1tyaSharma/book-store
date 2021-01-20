@@ -12,6 +12,8 @@ app.listen(PORT, () => {
 });
 //set template engines as ejs
 app.set("view engine", "ejs");
+//set static files folder
+app.use(express.static("public"));
 //app.use(expressLayout);
 app.set("views", path.join(__dirname, "/views"));
 //routes
