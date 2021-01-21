@@ -46,5 +46,11 @@ body {
   color: var(--pure);
 }
 .card1 {
-  width: 300px;
+  width: 320px;
+}
+.orderButton {
+  background: var(--primary);
+}
+.orderButton:hover {
+  background: var(--primary-hover);
 }

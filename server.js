@@ -14,9 +14,12 @@ app.listen(PORT, () => {
 app.set("view engine", "ejs");
 //set static files folder
 app.use(express.static("public"));
-//app.use(expressLayout);
+app.use(expressLayout);
 app.set("views", path.join(__dirname, "/views"));
 //routes
 app.get("/", (req, res) => {
   res.render("index");
+});
+app.get("/cart", (req, res) => {
+  res.render("cart");
 });
