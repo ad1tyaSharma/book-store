@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap");
 * {
   font-family: "Lato", sans-serif;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
 }
 :root {
   --primary: #fe5f1e;
@@ -19,7 +19,6 @@ body {
   color: var(--dark);
   margin-left: 1vw;
   margin-right: 1vw;
-  transition: 0.7s ease-in;
 }
 .cart {
   background: var(--primary);
@@ -30,4 +29,22 @@ body {
 }
 .cart:hover {
   background: var(--primary-hover);
+}
+.hero {
+  background: var(--secondary);
+}
+.secondary-color {
+  background: var(--secondary);
+}
+.addToCart {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.addToCart:hover {
+  background: var(--primary);
+  border-color: var(--pure);
+  color: var(--pure);
+}
+.card1 {
+  width: 300px;
 }
