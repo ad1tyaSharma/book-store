@@ -1,31 +1,96 @@
-//imports
+require("dotenv").config();
 const express = require("express");
-const path = require("path");
-const ejs = require("ejs");
-const expressLayout = require("express-ejs-layouts");
-const dotenv = require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT || 3000;
-//server
-app.listen(PORT, () => {
-  console.log(`Listening on Port ${PORT}...`);
+const ejs = require("ejs");
+const path = require("path");
+const expressLayout = require("express-ejs-layouts");
+const PORT = process.env.PORT || 3300;
+const mongoose = require("mongoose");
+const session = require("express-session");
+const flash = require("express-flash");
+const MongoDbStore = require("connect-mongo")(session);
+const passport = require("passport");
+const Emitter = require("events");
+
+// Database connection
+mongoose.connect(process.env.MONGO_CONNECTION_URL, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: true,
 });
-//set template engines as ejs
-app.set("view engine", "ejs");
-//set static files folder
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("Database connected...");
+});
+
+// Session store
+let mongoStore = new MongoDbStore({
+  mongooseConnection: connection,
+  collection: "sessions",
+});
+
+// Event emitter
+const eventEmitter = new Emitter();
+app.set("eventEmitter", eventEmitter);
+
+// Session config
+app.use(
+  session({
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    store: mongoStore,
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hour
+  })
+);
+
+// Passport config
+const passportInit = require("./app/config/passport");
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+// Assets
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// Global middleware
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  res.locals.user = req.user;
+  next();
+});
+// set Template engine
 app.use(expressLayout);
-app.set("views", path.join(__dirname, "/views"));
-//routes
-app.get("/", (req, res) => {
-  res.render("index");
+app.set("views", path.join(__dirname, "/resources/views"));
+app.set("view engine", "ejs");
+
+require("./routes/web")(app);
+app.use((req, res) => {
+  res.status(404).render("errors/404");
 });
-app.get("/cart", (req, res) => {
-  res.render("cart");
+
+const server = app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
-app.get("/login", (req, res) => {
-  res.render("auth/login");
+
+// Socket
+
+const io = require("socket.io")(server);
+io.on("connection", (socket) => {
+  // Join
+  socket.on("join", (orderId) => {
+    socket.join(orderId);
+  });
 });
-app.get("/register", (req, res) => {
-  res.render("auth/register");
+
+eventEmitter.on("orderUpdated", (data) => {
+  io.to(`order_${data.id}`).emit("orderUpdated", data);
+});
+
+eventEmitter.on("orderPlaced", (data) => {
+  io.to("adminRoom").emit("orderPlaced", data);
 });
