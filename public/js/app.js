@@ -27963,36 +27963,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var addToCart = document.querySelectorAll('.add-to-cart');
-var cartCounter = document.querySelector('#cartCounter');
+var addToCart = document.querySelectorAll(".add-to-cart");
+var cartCounter = document.querySelector("#cartCounter");
 
 function updateCart(pizza) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/update-cart', pizza).then(function (res) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/update-cart", pizza).then(function (res) {
     cartCounter.innerText = res.data.totalQty;
     new noty__WEBPACK_IMPORTED_MODULE_1___default.a({
-      type: 'success',
+      type: "success",
       timeout: 1000,
-      text: 'Item added to cart',
+      text: "Item added to cart",
       progressBar: false
     }).show();
   })["catch"](function (err) {
     new noty__WEBPACK_IMPORTED_MODULE_1___default.a({
-      type: 'error',
+      type: "error",
       timeout: 1000,
-      text: 'Something went wrong',
+      text: "Something went wrong",
       progressBar: false
     }).show();
   });
 }
 
 addToCart.forEach(function (btn) {
-  btn.addEventListener('click', function (e) {
+  btn.addEventListener("click", function (e) {
     var pizza = JSON.parse(btn.dataset.pizza);
     updateCart(pizza);
   });
 }); // Remove alert message after X seconds
 
-var alertMsg = document.querySelector('#success-alert');
+var alertMsg = document.querySelector("#success-alert");
 
 if (alertMsg) {
   setTimeout(function () {
@@ -28001,32 +28001,32 @@ if (alertMsg) {
 } // Change order status
 
 
-var statuses = document.querySelectorAll('.status_line');
-var hiddenInput = document.querySelector('#hiddenInput');
+var statuses = document.querySelectorAll(".status_line");
+var hiddenInput = document.querySelector("#hiddenInput");
 var order = hiddenInput ? hiddenInput.value : null;
 order = JSON.parse(order);
-var time = document.createElement('small');
+var time = document.createElement("small");
 
 function updateStatus(order) {
   statuses.forEach(function (status) {
-    status.classList.remove('step-completed');
-    status.classList.remove('current');
+    status.classList.remove("step-completed");
+    status.classList.remove("current");
   });
   var stepCompleted = true;
   statuses.forEach(function (status) {
     var dataProp = status.dataset.status;
 
     if (stepCompleted) {
-      status.classList.add('step-completed');
+      status.classList.add("step-completed");
     }
 
     if (dataProp === order.status) {
       stepCompleted = false;
-      time.innerText = moment__WEBPACK_IMPORTED_MODULE_3___default()(order.updatedAt).format('hh:mm A');
+      time.innerText = moment__WEBPACK_IMPORTED_MODULE_3___default()(order.updatedAt).format("hh:mm A");
       status.appendChild(time);
 
       if (status.nextElementSibling) {
-        status.nextElementSibling.classList.add('current');
+        status.nextElementSibling.classList.add("current");
       }
     }
   });
@@ -28038,26 +28038,26 @@ Object(_stripe__WEBPACK_IMPORTED_MODULE_4__["initStripe"])(); // Socket
 var socket = io(); // Join
 
 if (order) {
-  socket.emit('join', "order_".concat(order._id));
+  socket.emit("join", "order_".concat(order._id));
 }
 
 var adminAreaPath = window.location.pathname;
 
-if (adminAreaPath.includes('admin')) {
+if (adminAreaPath.includes("admin")) {
   Object(_admin__WEBPACK_IMPORTED_MODULE_2__["initAdmin"])(socket);
-  socket.emit('join', 'adminRoom');
+  socket.emit("join", "adminRoom");
 }
 
-socket.on('orderUpdated', function (data) {
+socket.on("orderUpdated", function (data) {
   var updatedOrder = _objectSpread({}, order);
 
   updatedOrder.updatedAt = moment__WEBPACK_IMPORTED_MODULE_3___default()().format();
   updatedOrder.status = data.status;
   updateStatus(updatedOrder);
   new noty__WEBPACK_IMPORTED_MODULE_1___default.a({
-    type: 'success',
+    type: "success",
     timeout: 1000,
-    text: 'Order updated',
+    text: "Order updated",
     progressBar: false
   }).show();
 });

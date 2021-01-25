@@ -540,3 +540,12 @@ section.status {
   background-color: #fefde5 !important;
 }
 
+.logoImage {
+  width: 100px;
+  height: 100px;
+}
+
+.cartText {
+  color: #fff;
+}
+
