@@ -2,64 +2,66 @@
   "_id": {
     "$oid": "5eee651f739f8c674fd736ee"
   },
-  "name": "Margherita",
+  "name": "A Promised Land",
   "image": "pizza.png",
-  "price": "250",
-  "size": "small"
+  "author": "Barack Obama",
+  "price": "1999"
+  
 },{
   "_id": {
     "$oid": "5eee6671a27a66807cf2bea3"
   },
-  "name": "Marinara",
+  "name": "The Battle of Belonging",
   "image": "pizza.png",
-  "price": "300",
-  "size": "medium"
+  "author": "Shashi Tharoor",
+  "price": "799"
+  
 },{
   "_id": {
     "$oid": "5eee6692a27a66807cf2bea4"
   },
-  "name": "Carbonara",
+  "name": "Portraits of Power",
   "image": "pizza.png",
-  "price": "200",
-  "size": "small"
+  "price": "595",
+  "author": "N.K. Singh"
 },{
   "_id": {
     "$oid": "5eee66a5a27a66807cf2bea5"
   },
-  "name": "Americana",
+  "name": "Remnants of a Separation",
   "image": "pizza.png",
-  "price": "500",
-  "size": "large"
+  "price": "599",
+  "author": "Aanchal Malhotra"
 },{
   "_id": {
     "$oid": "5eee66c4a27a66807cf2bea6"
   },
-  "name": "Chicken Mushroom",
+  "name": "The India Way",
   "image": "pizza.png",
-  "price": "350",
-  "size": "medium"
+  "price": "699",
+  "author": "S. Jaishankar"
 },{
   "_id": {
     "$oid": "5eee66cfa27a66807cf2bea7"
   },
-  "name": "Paneer pizza",
+  "name": "The Immortals of Melhua(Shiva Trilogy):1",
   "image": "pizza.png",
-  "price": "200",
-  "size": "small"
+  "price": "236",
+  "author": "Amish"
 },{
   "_id": {
     "$oid": "5eee66eea27a66807cf2bea8"
   },
-  "name": "Vegies pizza",
+  "name": "One Arranged Murder",
   "image": "pizza.png",
-  "price": "600",
-  "size": "large"
+  "price": "123",
+  "author": "Chetan Bhagat"
 },{ 
   "_id": {
     "$oid": "5eee6717a27a66807cf2bea9"
   },
-  "name": "Pepperoni",
+  "name": "Roads to Mussoorie",
   "image": "pizza.png",
-  "price": "500",
-  "size": "medium"
+  "price": "138",
+  "author": "Ruskin Bond"
 }]
