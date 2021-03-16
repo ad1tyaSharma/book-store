@@ -113,26 +113,8 @@ section.status {
   top: 50%;
   transform: translateY(-50%);
   color: inherit;
-}
-.status-box ul li:nth-child(1) span:before {
-  content: "\f46c";
-}
-
-.status-box ul li:nth-child(2) span:before {
-  content: "\f560";
-}
-
-.status-box ul li:nth-child(3) span:before {
-  content: "\f818";
-}
-
-.status-box ul li:nth-child(4) span:before {
-  content: "\f0d1";
-}
-
-.status-box ul li:nth-child(5) span:before {
-  content: "\f582";
-}
+}/*
+*/
 .status-box ul li {
   position: relative;
 }

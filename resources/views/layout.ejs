@@ -36,6 +36,7 @@
       <div>
         <ul class="flex items-center">
           <li class="ml-6"><a href="/">Bookshelf</a></li>
+          <li class="ml-6"><a href="/customer/orders">Orders</a></li>
           <% if(user) { %>
           <li class="ml-6">
             <form id="logout" action="/logout" method="POST">
@@ -48,6 +49,7 @@
           <li class="ml-6"><a href="/register">Register</a></li>
           <li class="ml-6"><a href="/login">Login</a></li>
           <% } %>
+
           <li class="ml-6">
             <a
               href="/cart"
@@ -76,7 +78,7 @@
           <ul>
             <li><a href="#">Editor's Picks</a></li>
             <li><a href="#">Best Sellers</a></li>
-            <li><a href="/customer/orders">My Orders</a></li>
+            <li><a href="//orders">My Orders</a></li>
             <li><a href="#">Contact us</a></li>
           </ul>
         </div>
