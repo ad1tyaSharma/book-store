@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@stripe/stripe-js": "^1.10.0",
+    "@stripe/stripe-js": "^1.13.2",
     "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
     "connect-mongo": "^3.2.0",
@@ -25,6 +25,7 @@
     "express-ejs-layouts": "^2.5.0",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
     "moment": "^2.27.0",
     "mongoose": "^5.9.25",
     "noty": "^3.2.0-beta",

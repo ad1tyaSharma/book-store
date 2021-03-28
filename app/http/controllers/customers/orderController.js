@@ -2,6 +2,7 @@ const Order = require("../../../models/order");
 const moment = require("moment");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 function orderController() {
+  //console.log(process.env.STRIPE_PRIVATE_KEY);
   return {
     store(req, res) {
       // Validate request
@@ -9,25 +10,26 @@ function orderController() {
       if (!phone || !address) {
         return res.status(422).json({ message: "All fields are required" });
       }
-
+      //console.log(req.session.cart.items);
       const order = new Order({
         customerId: req.user._id,
         items: req.session.cart.items,
         phone,
         address,
       });
+      //console.log(order);
       order
         .save()
         .then((result) => {
           Order.populate(result, { path: "customerId" }, (err, placedOrder) => {
-            // req.flash('success', 'Order placed successfully')
+            req.flash("success", "Order placed successfully");
 
             // Stripe payment
             if (paymentType === "card") {
               stripe.charges
                 .create({
                   amount: req.session.cart.totalPrice * 100,
-                  source: stripeToken,
+                  source: "tok_visa", // to be changed to stripeToken in live
                   currency: "inr",
                   description: `Book order: ${placedOrder._id}`,
                 })
@@ -51,6 +53,7 @@ function orderController() {
                     });
                 })
                 .catch((err) => {
+                  console.log(err);
                   delete req.session.cart;
                   return res.json({
                     message:
