@@ -21,9 +21,13 @@
   >
     <% books.forEach(function(book) { %>
     <div class="w-full md:w-64">
-      <img class="h-40 mb-4 mx-auto" src="/images/<%= book.image %>" alt="" />
+      <a href="/detail/<%=book._id%>"
+        ><img class="h-40 mb-4 mx-auto" src="/images/<%= book.image %>" alt=""
+      /></a>
       <div class="text-center">
-        <h2 class="mb-4 text-lg"><%= book.name %></h2>
+        <a href="/detail/<%=book._id%>" class="mb-4 text-lg"
+          ><%= book.name %></a
+        >
         <span class="size py-1 px-4 rounded-full uppercase text-xs">
           <%= book.author %>
         </span>

@@ -1,0 +1,16 @@
+<div class="chartContainer">
+  <h2>
+    <%=use%>
+  </h2>
+  <% books.forEach(function(book) { %>
+  <p><%=book.rank%></p>
+  <a href="/details/<%=book.id%>"><h3><%=book.name%></h3></a>
+  <button
+    data-book="<%= JSON.stringify(book) %>"
+    class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold"
+  >
+    <span>+</span>
+    <span class="ml-4">Add</span>
+  </button>
+  <% }) %>
+</div>
