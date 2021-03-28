@@ -8,4 +8,4 @@ const bestSellerSchema = new Schema({
   author: { type: String, required: true },
 });
 
-module.exports = mongoose.model("BestSeller", bookSchema);
+module.exports = mongoose.model("BestSeller", bestSellerSchema);

@@ -6,6 +6,7 @@ const adminOrderController = require("../app/http/controllers/admin/orderControl
 const statusController = require("../app/http/controllers/admin/statusController");
 const detailController = require("../app/http/controllers/customers/detailController");
 const editorChoice = require("../app/models/editorChoice");
+const bestSeller = require("../app/models/bestSeller");
 // Middlewares
 const guest = require("../app/http/middlewares/guest");
 const auth = require("../app/http/middlewares/auth");
@@ -23,7 +24,11 @@ function initRoutes(app) {
   app.post("/update-cart", cartController().update);
   app.get("/editorChoice", async (req, res) => {
     const books = await editorChoice.find();
-    res.render("/customer/chart", { books: books, use: "Editor Choice" });
+    res.render("customers/chart", { books: books, use: "Editor Choice" });
+  });
+  app.get("/bestSeller", async (req, res) => {
+    const books = await bestSeller.find();
+    res.render("customers/chart", { books: books, use: "Best Sellers" });
   });
   // Customer routes
   app.post("/orders", auth, orderController().store);
