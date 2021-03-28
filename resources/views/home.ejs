@@ -19,18 +19,18 @@
   <div
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16"
   >
-    <% pizzas.forEach(function(pizza) { %>
+    <% books.forEach(function(book) { %>
     <div class="w-full md:w-64">
-      <img class="h-40 mb-4 mx-auto" src="/images/<%= pizza.image %>" alt="" />
+      <img class="h-40 mb-4 mx-auto" src="/images/<%= book.image %>" alt="" />
       <div class="text-center">
-        <h2 class="mb-4 text-lg"><%= pizza.name %></h2>
+        <h2 class="mb-4 text-lg"><%= book.name %></h2>
         <span class="size py-1 px-4 rounded-full uppercase text-xs">
-          <%= pizza.author %>
+          <%= book.author %>
         </span>
         <div class="flex items-center justify-around mt-6">
-          <span class="font-bold text-lg">₹<%= pizza.price %></span>
+          <span class="font-bold text-lg">₹<%= book.price %></span>
           <button
-            data-pizza="<%= JSON.stringify(pizza) %>"
+            data-book="<%= JSON.stringify(book) %>"
             class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold"
           >
             <span>+</span>

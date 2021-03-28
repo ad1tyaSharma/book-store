@@ -7,9 +7,9 @@ import { initStripe } from "./stripe";
 let addToCart = document.querySelectorAll(".add-to-cart");
 let cartCounter = document.querySelector("#cartCounter");
 
-function updateCart(pizza) {
+function updateCart(book) {
   axios
-    .post("/update-cart", pizza)
+    .post("/update-cart", book)
     .then((res) => {
       cartCounter.innerText = res.data.totalQty;
       new Noty({
@@ -31,8 +31,8 @@ function updateCart(pizza) {
 
 addToCart.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    let pizza = JSON.parse(btn.dataset.pizza);
-    updateCart(pizza);
+    let book = JSON.parse(btn.dataset.book);
+    updateCart(book);
   });
 });
 

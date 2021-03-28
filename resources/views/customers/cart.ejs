@@ -5,17 +5,17 @@
       <img src="/img/cart-black.png" alt="" />
       <h1 class="font-bold ml-4 text-2xl">Order summary</h1>
     </div>
-    <div class="pizza-list">
-      <% for(let pizza of Object.values(session.cart.items)) { %>
+    <div class="book-list">
+      <% for(let book of Object.values(session.cart.items)) { %>
       <div class="flex items-center my-8">
-        <img class="w-24" src="/images/<%= pizza.item.image %>" alt="" />
+        <img class="w-24" src="/images/<%= book.item.image %>" alt="" />
         <div class="flex-1 ml-4">
-          <h1><%= pizza.item.name %></h1>
-          <span><%= pizza.item.size %></span>
+          <h1><%= book.item.name %></h1>
+          <span><%= book.item.size %></span>
         </div>
-        <span class="flex-1"><%= pizza.qty %> Pcs</span>
+        <span class="flex-1"><%= book.qty %> Pcs</span>
         <span class="font-bold text-lg"
-          >₹ <%= pizza.item.price * pizza.qty %></span
+          >₹ <%= book.item.price * book.qty %></span
         >
         <button onclick="">R</button>
       </div>
@@ -92,8 +92,8 @@
     <div class="container mx-auto text-center">
       <h1 class="text-3xl font-bold mb-2">Cart Empty 😕</h1>
       <p class="text-gray-500 text-lg mb-12">
-        You probably haven't ordered a pizza yet. <br />
-        To order a pizza, go to the main page.
+        You probably haven't ordered a book yet. <br />
+        To order a book, go to the main page.
       </p>
       <img class="w-2/5 mx-auto" src="/img/empty-cart.png" alt="empty-cart" />
       <a
