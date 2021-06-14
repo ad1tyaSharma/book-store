@@ -1,7 +1,7 @@
 {
-  "name": "realtime-store",
+  "name": "realtime-book-store",
   "version": "1.0.0",
-  "description": "This is our relatime Food store",
+  "description": "This is our relatime Book store",
   "main": "index.js",
   "author": "Aditya Sharma",
   "scripts": {

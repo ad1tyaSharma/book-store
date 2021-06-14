@@ -6,11 +6,11 @@
 }
 
 :root {
-  --primary: gray;
-  --primary-hover: #000;
+  --primary: #655cd4;
+  --primary-hover: #413b88;
   --secondary: #f8f8f8;
   --pure: #ffffff;
-  --dark: #232323;
+  --dark: #000;
   --gray: #cccccc;
 }
 nav li a:hover {
@@ -21,6 +21,10 @@ body {
   color: var(--dark);
   margin-left: 1vw;
   margin-right: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .cart {
   background: var(--primary);
@@ -31,7 +35,7 @@ body {
 }
 
 .hero {
-  background: var(--secondary);
+  background: #3a1b3c;
 }
 .secondary-color {
   background: var(--secondary);
@@ -40,10 +44,43 @@ body {
   border: 2px solid var(--primary);
   color: var(--primary);
 }
+.navlinks {
+  font-weight: 500;
+}
 .addToCart:hover {
   background: var(--primary);
   border-color: var(--pure);
   color: var(--pure);
+}
+.top {
+  height: 90vh;
+  width: 90vw;
+  border-radius: 25px;
+}
+.quotes {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3a1b3c;
+}
+.quotes1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3a1b3c;
+}
+.topleft {
+  display: flex;
+  justify-content: space-around;
+
+  flex-direction: column;
+}
+.orderNowBtn {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 10vh;
+  transition: 0.3s ease-in;
+}
+.orderNowBtn:hover {
+  background: var(--primary-hover);
 }
 .Btn {
   background: var(--primary);

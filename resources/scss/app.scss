@@ -41,14 +41,6 @@ section.hero {
   }
 }
 
-.btn-primary {
-  background: $primary;
-  transition: $smooth;
-  &:hover {
-    background: $primary-hover;
-  }
-}
-
 section.cart {
   background: $secondary;
   .amount {
@@ -113,7 +105,7 @@ section.status {
   top: 50%;
   transform: translateY(-50%);
   color: inherit;
-}/*
+} /*
 */
 .status-box ul li {
   position: relative;
