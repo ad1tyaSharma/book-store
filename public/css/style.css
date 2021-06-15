@@ -76,7 +76,7 @@ body {
 .orderNowBtn {
   background: var(--primary);
   color: #fff;
-  margin-top: 10vh;
+  margin-top: 5vh;
   transition: 0.3s ease-in;
 }
 .orderNowBtn:hover {
