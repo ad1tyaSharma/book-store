@@ -23,6 +23,7 @@
       <thead>
         <tr>
           <th class="px-4 py-2 text-left">Orders</th>
+          <th></th>
           <th class="px-4 py-2 text-left">Phone</th>
           <th class="px-4 py-2 text-left">Address</th>
           <th class="px-4 py-2 text-left">Time</th>
@@ -34,7 +35,9 @@
           <td class="border px-4 py-2">
             <%= order._id %>
           </td>
-          <td>
+          <td
+            style="display: flex;justify-content: center;align-items: center;"
+          >
             <a
               class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary"
               href="/customer/orders/<%= order._id %>"

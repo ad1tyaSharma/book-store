@@ -128,17 +128,17 @@ section.status {
 
 // line
 .status-box ul li.step-completed:before {
-  background: $gray;
+  background: #413b88;
 }
 
 // dots
 .status-box ul li.step-completed span:after {
-  background: $gray;
+  background: #413b88;
 }
 
 // text
 .status-box ul li.step-completed span {
-  color: $gray;
+  color: #413b88;
 }
 
 // Current status
