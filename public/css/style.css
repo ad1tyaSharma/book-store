@@ -243,8 +243,9 @@ body {
   background-color: black; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 5px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
+  height: 30px;
+  width: 30px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
   font-size: 1rem; /* Increase font size */
 }
 
