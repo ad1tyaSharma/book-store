@@ -1,5 +1,5 @@
-<div class="detailContainer">
-  <h1><%=books.name%></h1>
+<div class="detailContainer" style="width: 80vw;">
+  <h1 class="detailTitle" style="text-align: center;"><%=books.name%></h1>
   <img
     src="/images/<%=books.image%>"
     class="h-40 mb-4 mx-auto"
@@ -7,5 +7,5 @@
   />
   <h4><%=books.author%></h4>
   <b><%=books.price%></b>
-  <p></p>
+  <p><%=books.description%></p>
 </div>

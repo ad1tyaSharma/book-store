@@ -319,7 +319,15 @@ nav li:last-child a {
 nav li:last-child a:hover {
   background: #000;
 }
-
+.detailTitle {
+  text-align: center;
+}
+.detailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+}
 nav li a {
   transition: all 0.3s ease-in-out;
 }

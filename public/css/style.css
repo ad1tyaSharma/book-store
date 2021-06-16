@@ -108,6 +108,10 @@ body {
   width: 100px;
 }
 
+.detailTitle {
+  text-align: center;
+}
+
 .gg-shopping-cart {
   display: block;
   box-sizing: border-box;

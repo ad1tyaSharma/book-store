@@ -24,12 +24,12 @@
         ><img class="h-40 mb-4 mx-auto" src="/images/<%= book.image %>" alt=""
       /></a>
       <div class="text-center">
-        <a href="/detail/<%=book._id%>" class="mb-4 text-lg"
+        <a href="<%=book.data%>" class="mb-4 text-lg"
           ><%= book.name %></a
         >
-        <span class="size py-1 px-4 rounded-full uppercase text-xs">
+        <div class="size py-1 px-4 rounded-full uppercase text-xs">
           <%= book.author %>
-        </span>
+        </div>
         <div class="flex items-center justify-around mt-6">
           <span class="font-bold text-lg">₹<%= book.price %></span>
           <button
@@ -47,7 +47,7 @@
 </section>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-<footer>
+<footer style="width: 100vw;">
   <div class="footer">
     <div class="row">
       <a href="#"><i class="fab fa-facebook"></i></a>
