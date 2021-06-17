@@ -34,12 +34,5 @@
     "socket.io": "^2.3.0",
     "stripe": "^8.118.0"
   },
-  "devDependencies": {
-    "laravel-mix": "^5.0.4",
-    "nodemon": "^2.0.4",
-    "resolve-url-loader": "^3.1.0",
-    "sass": "^1.26.9",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
-  }
+  "devDependencies": {}
 }
