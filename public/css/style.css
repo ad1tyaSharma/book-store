@@ -231,6 +231,10 @@ body {
     margin: 0% 3%;
   }
 }
+.maintitle {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
 /**/
 #myBtn {
   display: none; /* Hidden by default */
