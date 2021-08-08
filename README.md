@@ -40,4 +40,22 @@ NPM packages used
 - COD & Pay with Card available
 - Track your order status
 
+## Dummy Account 
+
+email : user1@abc.com
+password : password@123
+
+## Dummy card number
+
+4242424242424242 
+4012888888881881 
+4000056655665556 
   
+## Screenshots
+ 
+ <img src="public/images/ss2.png">
+ <img src="public/images/ss3.png">
+ <img src="public/images/ss1.png">
+ <img src="public/images/ss4.png">
+ <img src="public/images/ss5.png">
+  <img src="public/images/ss6.png">
